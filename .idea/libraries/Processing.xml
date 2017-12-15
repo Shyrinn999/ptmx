@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Processing">
+    <CLASSES>
+      <root url="jar://E:/Processing/core/library/jogl-all-natives-linux-aarch64.jar!/" />
+      <root url="jar://E:/Processing/core/library/core.jar!/" />
+      <root url="jar://E:/Processing/core/library/gluegen-rt-natives-linux-amd64.jar!/" />
+      <root url="jar://E:/Processing/core/library/gluegen-rt.jar!/" />
+      <root url="jar://E:/Processing/core/library/gluegen-rt-natives-linux-aarch64.jar!/" />
+      <root url="jar://E:/Processing/core/library/jogl-all-natives-linux-amd64.jar!/" />
+      <root url="jar://E:/Processing/core/library/jogl-all.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

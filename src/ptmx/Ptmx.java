@@ -708,6 +708,7 @@ public class Ptmx {
             this.camleft = floor(left);
             this.camtop = floor(top);
         }
+        if(pg != parent.g) pg.beginDraw();
         pg.pushMatrix();
         pg.resetMatrix();
         pg.pushStyle();
@@ -727,6 +728,7 @@ public class Ptmx {
     private void finishDraw(PGraphics pg) {
         pg.popStyle();
         pg.popMatrix();
+        if(pg != parent.g) pg.endDraw();
     }
 
     private void drawLayer(PGraphics pg, int m) {

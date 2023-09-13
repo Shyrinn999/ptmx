@@ -19,6 +19,7 @@ public class Ptmx {
     private int drawmargin = 2;
     private int drawmode = PConstants.CORNER;
     private String positionmode = "CANVAS";//"CANVAS" or "MAP"
+    private String backgroundmode = "COLOR";//"COLOR", "CLEAR" or "NONE"
     private HashMap<Integer, Tile> tile_map = new HashMap<>();
     private MultiMap<Integer, CollisionShape> collision_map = new MultiMap<>();
     private ArrayList<Layer> layers = new ArrayList<>();
@@ -712,6 +713,15 @@ public class Ptmx {
         pg.pushStyle();
         pg.imageMode(parent.CORNER);
 //        pg.clear();
+        switch(this.backgroundmode) {
+            case "COLOR":
+                pg.background(this.backgroundcolor);
+                break;
+            case "CLEAR":
+                if(pg != parent.g) pg.clear();
+                else pg.background(this.backgroundcolor);
+                break;
+        }
     }
 
     private void finishDraw(PGraphics pg) {
@@ -1056,6 +1066,15 @@ public class Ptmx {
         if (this.drawmode == parent.CORNER) return this.getCamCorner();
         else return this.getCamCenter();
     }
+
+    public String getBackgroundMode(){//"COLOR", "CLEAR" or "NONE"
+        return this.backgroundmode;
+    }
+
+    public void setBackgroundMode(String s){
+        if(s.equals("COLOR") || s.equals("CLEAR") || s.equals("NONE")) this.backgroundmode = s;
+    }
+
 
     //Coordinate methods
 
